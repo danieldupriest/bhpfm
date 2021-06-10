@@ -1,0 +1,23 @@
+.slider-container {
+  background: var(--darker);
+  padding: 1em 0 0 0;
+}
+
+.slider-container .text {
+  display: flex;
+}
+
+.slider-container label {
+}
+
+.slider-container .variable-display {
+  color: var(--brighter);
+  flex-grow: 1;
+  text-align: right;
+}
+
+.slider-container .slider {
+  display: block;
+  margin-top: 0.5em;
+  width: 100%;
+}
