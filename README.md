@@ -6,6 +6,8 @@ Implementation: Daniel Dupriest
 
 License: MIT
 
+Demo Installation: [dev.hypersweet.com/bhpfm/](http://dev.hypersweet.com/bhpfm/)
+
 This application simulates borehole oscillations under various conditions. Parameters such as RPM, rock strength, gauge length and ROP can be specified, and the resulting oscillation is rendered
 
 ![Screenshot](screenshot.png)
