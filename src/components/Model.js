@@ -7,7 +7,7 @@ const background = "#111111"
 const textColor = "#dddddd"
 const lineColor = "#555555"
 const plotColor = "#ff8000"
-//const calcMin = 70
+const calcMin = 1914
 const calcMax = 13900
 //const drillStartHeight = -19.15
 
@@ -16,8 +16,8 @@ const Model = (props) => {
   const canvasRef = useRef(null)
 
   useEffect( () => {
-    const { rpm, rock, gauge, rop } = props
-    const points = Pastusek(rpm, rock, gauge, rop)
+    const { rpm, rock, gauge, rop, l1, l2 } = props
+    const points = Pastusek(rpm, rock, gauge, rop, l1, l2)
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
 
@@ -74,7 +74,7 @@ const Model = (props) => {
     var leftMax = 0
     var rightMax = 0
     context.moveTo(center, 0)
-    for(var i = 1914; i < calcMax; ++i) {
+    for(var i = calcMin; i < calcMax; ++i) {
       x = points[i].x
       y = points[i].y
       if(y < minDepth)
