@@ -1,12 +1,16 @@
 h1 {
   background: var(--dark);
-  color: var(--bright);
+  color: var(--brighter);
   padding: 0.5em 1em;
   font-size: 150%;
 }
 
 h2 {
+  background: var(--dark);
+  /*border-bottom: 1px solid var(--neutral);*/
+  color: var(--brighter);
   font-size: 125%;
+  padding: 0.5em 0.5em;
 }
 
 #app {
@@ -15,10 +19,10 @@ h2 {
   min-height: 100vh;
 }
 
-aside {
+#panel {
   color: var(--bright);
+  max-width: 50%;
   padding: 1em;
-  min-width: 13em;
 }
 
 #container {
@@ -27,11 +31,29 @@ aside {
   justify-content: center;
 }
 
-main {
-  padding: 1em 0 1em 1em;
+#instructions img {
+  border: 1px solid var(--neutral);
+  float: right;
+  margin: 1em 0 1em 1em;
+  max-width: 50%;
+  max-height: 30em;
+  padding: 1em;
+}
+
+#model {
+  padding: 1em 1em 1em 0;
+}
+
+#canvas {
+  height: calc(100vh - 5em);
+  min-height: 24em;
 }
 
 #settings {
+}
+
+#instructions {
+  margin-top: 2em;
 }
 
 footer {
@@ -50,22 +72,37 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   #container {
     flex-direction: column;
     padding: 0;
     justify-content: start;
   }
 
-  aside {
-    min-width: auto;
+  #model {
+    order: 0;
+    padding: 1em 1em 0 1em;
+  }
+
+  #canvas {
+    height: auto;
+  }
+
+  #panel {
+    order: 1;
+    min-width: 100%;
+  }
+
+  #instructions {
+    padding-top: 0;
   }
 
   h1 {
-    font-size: 100%;
+    font-size: 120%;
   }
 
-  main {
-    padding: 0;
+  h2 {
+    margin: 0 -1em;
+    padding: 0.5em 1em;
   }
 }

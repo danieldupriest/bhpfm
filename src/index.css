@@ -7,6 +7,10 @@
   --highlight: #ff8000;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
