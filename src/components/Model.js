@@ -7,6 +7,8 @@ const background = "#111111"
 const textColor = "#dddddd"
 const lineColor = "#555555"
 const plotColor = "#ff8000"
+const gridWidth = 2
+const lineWidth = 4
 const calcMin = 1914
 const calcMax = 13900
 //const drillStartHeight = -19.15
@@ -27,7 +29,7 @@ const Model = (props) => {
 		//clear canvas
 		context.fillStyle = background
 		context.fillRect(0, 0, width, height)
-		context.lineWidth = 4
+		context.lineWidth = gridWidth
 		
 		//set font
 		var fontSize = height / 20
@@ -68,6 +70,7 @@ const Model = (props) => {
 
     //draw graph
     context.beginPath()
+    context.lineWidth = lineWidth
     context.strokeStyle = plotColor
     var minDepth = 100
     var maxDepth = 100
