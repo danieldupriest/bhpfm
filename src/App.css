@@ -102,7 +102,13 @@ img.right {
 }
 
 .present #settings {
-  min-height: 100vh;
+  min-height: 24em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.present #settings h2 {
+  display: none;
 }
 
 #settings #toggle-label {
@@ -121,13 +127,13 @@ img.right {
 
 #sliders {
   display: flex;
-  height: 100%;
   flex-direction: column;
   justify-content: space-around;
 }
 
 .present #sliders {
-  height: calc(100vh - 6em);
+  height: calc(100vh);
+  min-height: 18em;
 }
 
 #instructions h3 {
@@ -203,6 +209,7 @@ footer .column {
   .present #settings {
     height: auto;
     min-height: auto;
+    margin-top: 1em;
   }
 
   #model {
