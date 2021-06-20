@@ -25,7 +25,13 @@
 }
 
 .present .slider-container + .slider-container {
-  border-top: 0;
+  border: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .present .slider-container {
+    margin: 0.25em 0;
+  }
 }
 
 .slider-container .text {
@@ -61,6 +67,6 @@
 }
 
 .present .css-1ldz52l-Slider {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
 }
