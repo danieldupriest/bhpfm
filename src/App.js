@@ -29,9 +29,8 @@ function App() {
         <div id="panel">
           <div id="settings" className="pane">
             <h2>Settings</h2>
-            <label className="toggle-label">
-              <div>Present</div>
-              <Toggle className="presentation-toggle" defaultChecked={present} onChange={togglePresentation} />
+            <label id="toggle-label">Present
+              <Toggle id="presentation-toggle" defaultChecked={present} onChange={togglePresentation} />
             </label>
             <div id="sliders">
               <Input key={0} value={rpm} label="RPM" xmin={1} xmax={450} step={1} suffix=" rpm" func={({x}) => setRpm(x)}/>

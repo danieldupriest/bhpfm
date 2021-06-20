@@ -95,21 +95,24 @@ img.right {
   margin: 1em 0 1em 1em;
 }
 
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .present #settings {
   min-height: 100vh;
 }
 
-#settings .toggle-label {
-  align-items: center;
+#settings #toggle-label {
   display: flex;
-  padding: 2em;
-  position: absolute;
-  top: 0;
-  right: 0;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #settings .react-toggle {
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 #settings .react-toggle--checked .react-toggle-track {
@@ -121,6 +124,10 @@ img.right {
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.present #sliders {
+  height: calc(100vh - 6em);
 }
 
 #instructions h3 {
@@ -187,6 +194,15 @@ footer .column {
     flex-direction: column;
     padding: 0;
     justify-content: start;
+  }
+
+  .present #sliders {
+    height: auto;
+  }
+
+  .present #settings {
+    height: auto;
+    min-height: auto;
   }
 
   #model {

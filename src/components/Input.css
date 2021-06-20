@@ -5,10 +5,15 @@
 
 .present .slider-container {
   background: var(--shadow-dark);
+  padding: 0;
 }
 
 .slider-container:hover {
   background: var(--dark);
+}
+
+.present .slider-container:hover {
+  background: var(--shadow-dark);
 }
 
 .slider-container:hover label {
