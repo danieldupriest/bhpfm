@@ -29,6 +29,19 @@ h3 {
   min-height: 100vh;
 }
 
+#container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1450px;
+}
+
+#panel {
+  color: var(--bright);
+  max-width: 50%;
+}
+
 .pane {
   background: var(--darker);
   /*background-image: url("./images/slate.png");*/
@@ -37,22 +50,6 @@ h3 {
   border-radius: 1em;
   overflow: auto;
   padding: 2em;
-}
-
-#panel {
-  color: var(--bright);
-  max-width: 50%;
-}
-
-#container {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-}
-
-#instructions h3 {
-  clear: both;
-  margin-top: 1em;
 }
 
 .pane img {
@@ -69,6 +66,11 @@ img.left {
 img.right {
   float: right;
   margin: 1em 0 1em 1em;
+}
+
+#instructions h3 {
+  clear: both;
+  margin-top: 1em;
 }
 
 #model {
@@ -128,6 +130,7 @@ footer .column {
   #model {
     order: 0;
     margin-left: 1em;
+    margin-bottom: 0;
   }
 
   #canvas {
