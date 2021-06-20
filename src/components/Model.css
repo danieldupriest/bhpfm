@@ -1,3 +1,11 @@
 #canvas {
+  height: calc(100vh - 8em);
   max-width: 100%;
+  min-height: 24em;
+}
+
+@media only screen and (max-width: 1000px) {
+  #canvas {
+    height: auto;
+  }
 }

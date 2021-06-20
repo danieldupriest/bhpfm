@@ -1,6 +1,18 @@
 .slider-container {
   background: var(--darker);
-  padding: 1em 0 0 0;
+  padding: 1em 0;
+}
+
+.slider-container:hover {
+  background: var(--dark);
+}
+
+.slider-container:hover label {
+  color: var(--brighter);
+}
+
+.slider-container + .slider-container {
+  border-top: 1px solid var(--neutral);
 }
 
 .slider-container .text {
@@ -8,12 +20,17 @@
 }
 
 .slider-container label {
+  color: var(--bright);
 }
 
 .slider-container .variable-display {
-  color: var(--brighter);
+  color: var(--highlight);
   flex-grow: 1;
   text-align: right;
+}
+
+.slider-container .variable-display .suffix {
+  color: var(--brighter);
 }
 
 .slider-container .slider {

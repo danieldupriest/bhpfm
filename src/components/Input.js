@@ -7,7 +7,7 @@ const Input = (props) => {
     <div className="slider-container">
       <div className="text">
         <label>{label}</label>
-        <div className="variable-display">{Math.round(value) !== value ? value.toFixed(2) : value}{suffix}</div>
+        <div className="variable-display">{Math.round(value) !== value ? value.toFixed(2) : value}<span className="suffix">{suffix}</span></div>
       </div>
       <Slider
         className="slider"
@@ -19,7 +19,7 @@ const Input = (props) => {
         xstep={step}
         styles={{
           track:{backgroundColor: '#000000'},
-          active:{backgroundColor: '#ff8000'}
+          active:{backgroundColor: '#6262ee'}
         }}
       />
     </div>

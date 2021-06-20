@@ -3,10 +3,9 @@ import Pastusek from '../Pastusek'
 import './Model.css'
 
 const xAxisDivisions = 4
-const background = "#111111"
-const textColor = "#dddddd"
+const textColor = "#a4a4a4"
 const lineColor = "#555555"
-const plotColor = "#ff8000"
+const plotColor = "#6262ee"
 const gridWidth = 2
 const lineWidth = 4
 const calcMin = 1914
@@ -25,49 +24,17 @@ const Model = (props) => {
 
 		const width = context.canvas.width //= window.innerWidth;
 	  const height = context.canvas.height //= window.innerHeight-230;
+    const center = width / 2
 
 		//clear canvas
-		context.fillStyle = background
-		context.fillRect(0, 0, width, height)
-		context.lineWidth = gridWidth
+		//context.fillStyle = background
+		//context.fillRect(0, 0, width, height)
+    context.clearRect(0, 0, width, height)
 		
 		//set font
 		var fontSize = height / 20
 		context.font = fontSize + "px sans-serif"
-			
-		//draw y axis
-		context.fillStyle = lineColor
-		context.strokeStyle = lineColor
-		const stepSize = 4 / xAxisDivisions
-		const stepSizePixels = width / xAxisDivisions
-		const center = width / 2
-		for(var x = -2; x <= 2; x += stepSize) {
-      context.beginPath()
-      context.moveTo(center + x * stepSizePixels, 0)
-      context.lineTo(center + x * stepSizePixels, height)
-      context.stroke()
-      context.fillStyle = textColor
-      if(x === 2)
-        context.fillText(x + '"', center + x * stepSizePixels - fontSize * 1.5, fontSize)
-      else
-        context.fillText(x + '"', center + x * stepSizePixels + 5, fontSize)
-      context.fillStyle = lineColor
-    }
-
-		//draw x axis
-    context.fillStyle = lineColor
-    context.strokeStyle = lineColor
-    const depthStep = height / 120;
-    for(var y = 0; y <= 120; y += 20) {
-      context.beginPath()
-      context.moveTo(0, y * depthStep)
-      context.lineTo(width, y * depthStep)
-      context.stroke()
-      context.fillStyle = textColor
-      context.fillText("-" + y + "'", 5, y * depthStep - 5)
-      context.fillStyle = lineColor
-    }
-
+		
     //draw graph
     context.beginPath()
     context.lineWidth = lineWidth
@@ -91,6 +58,46 @@ const Model = (props) => {
       context.lineTo(y / 2 * center + center, x / 120 * height);
     }
     context.stroke();
+
+    //set grid width
+    context.lineWidth = gridWidth
+    
+		//draw y axis
+		context.fillStyle = lineColor
+		context.strokeStyle = lineColor
+		const stepSize = 4 / xAxisDivisions
+		const stepSizePixels = width / xAxisDivisions
+		for(var x = -2; x <= 2; x += stepSize) {
+      if (x !== -2 && x !== 2) {
+        context.beginPath()
+        context.moveTo(center + x * stepSizePixels, 0)
+        context.lineTo(center + x * stepSizePixels, height)
+        context.stroke()
+      }
+      
+      context.fillStyle = textColor
+      if(x === 2)
+        context.fillText(x + '"', center + x * stepSizePixels - fontSize * 1.5, fontSize)
+      else
+        context.fillText(x + '"', center + x * stepSizePixels + 5, fontSize)
+      context.fillStyle = lineColor
+    }
+
+    //draw x axis
+    context.fillStyle = lineColor
+    context.strokeStyle = lineColor
+    const depthStep = height / 120;
+    for(var y = 0; y <= 120; y += 20) {
+      if (y !== 0 && y !== 120) {
+        context.beginPath()
+        context.moveTo(0, y * depthStep)
+        context.lineTo(width, y * depthStep)
+        context.stroke()  
+      }
+      context.fillStyle = textColor
+      context.fillText("-" + y + "'", 5, y * depthStep - 5)
+      context.fillStyle = lineColor
+    }
   }, [props])
 
   return (

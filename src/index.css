@@ -1,10 +1,14 @@
 :root {
-  --brighter: #dddddd;
-  --bright: #bbbbbb;
-  --neutral: #666666;
-  --dark: #444444;
-  --darker: #111111;
-  --highlight: #ff8000;
+  --brighter: #e2e2e2;
+  --bright: #a4a4a4;
+  --neutral: #444444;
+  --dark: #2a2a2a;
+  --darker: #1e1e1e;
+  --darkest: #121212;
+  --shadow-dark: #0b0b0b;
+  --shadow-light: #101010;
+  /*--highlight: #ff8000;*/
+  --highlight: #6262ee;
 }
 
 * {
@@ -15,7 +19,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--darker);
+  background: var(--darkest);
 }
 
 body {
