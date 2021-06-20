@@ -12,7 +12,7 @@ function App() {
   const [rop, setRop] = useState(140)
   const [l1, setL1] = useState(15.25)
   const [l2, setL2] = useState(3.0)
-  const [present, setPresent] = useState(true)
+  const [present, setPresent] = useState(false)
 
   const togglePresentation = () => {
     setPresent(current => {
