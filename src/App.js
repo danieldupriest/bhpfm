@@ -20,12 +20,12 @@ function App() {
         <div id="panel">
           <div id="settings">
             <h2>Settings</h2>
-            <Input key={0} value={rpm} label="RPM" xmin={1} xmax={450} suffix=" rpm" func={({x}) => setRpm(x)}/>
-            <Input key={1} value={rock} label="Rock strength" xmin={1000} xmax={40000} suffix=" ksi" func={({x}) => setRock(x)}/>
-            <Input key={2} value={gauge} label="Gauge length" xmin={1} xmax={8} suffix=" in" func={({x}) => setGauge(x)}/>
-            <Input key={3} value={rop} label="ROP" xmin={1} xmax={400} suffix=" ft/hr" func={({x}) => setRop(x)}/>
-            <Input key={4} value={l1} label="L1" xmin={0} xmax={60} suffix=" ft" func={({x}) => setL1(x)}/>
-            <Input key={5} value={l2} label="L2" xmin={0} xmax={5} suffix=" ft" func={({x}) => setL2(x)}/>
+            <Input key={0} value={rpm} label="RPM" xmin={1} xmax={450} step={1} suffix=" rpm" func={({x}) => setRpm(x)}/>
+            <Input key={1} value={rock} label="Rock strength" xmin={1000} xmax={40000} step={1} suffix=" ksi" func={({x}) => setRock(x)}/>
+            <Input key={2} value={gauge} label="Gauge length" xmin={1} xmax={8} step={0.25} suffix=" in" func={({x}) => setGauge(x)}/>
+            <Input key={3} value={rop} label="ROP" xmin={1} xmax={400} step={1} suffix=" ft/hr" func={({x}) => setRop(x)}/>
+            <Input key={4} value={l1} label="L1" xmin={0} xmax={60} step={0.25} suffix=" ft" func={({x}) => setL1(x)}/>
+            <Input key={5} value={l2} label="L2" xmin={0} xmax={5} step={0.25} suffix=" ft" func={({x}) => setL2(x)}/>
           </div>
           <div id="instructions">
             <h2>Instructions</h2>
