@@ -13,6 +13,8 @@
 
 * {
   box-sizing: border-box;
+  transition: background-color, color, padding, margin, font-size, height,
+    width ease-in-out 250ms;
 }
 
 html,
@@ -37,4 +39,8 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+p {
+  line-height: 150%;
 }

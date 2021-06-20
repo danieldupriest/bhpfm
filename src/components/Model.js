@@ -4,8 +4,11 @@ import './Model.css'
 
 const xAxisDivisions = 4
 const textColor = "#a4a4a4"
+const textColorPresent = "#ffffff"
 const lineColor = "#555555"
+const lineColorPresent = "#444444"
 const plotColor = "#6262ee"
+const plotColorPresent = "#5555ff"
 const gridWidth = 2
 const lineWidth = 4
 const calcMin = 1914
@@ -17,7 +20,7 @@ const Model = (props) => {
   const canvasRef = useRef(null)
 
   useEffect( () => {
-    const { rpm, rock, gauge, rop, l1, l2 } = props
+    const { rpm, rock, gauge, rop, l1, l2, present } = props
     const points = Pastusek(rpm, rock, gauge, rop, l1, l2)
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
@@ -38,15 +41,15 @@ const Model = (props) => {
     //draw graph
     context.beginPath()
     context.lineWidth = lineWidth
-    context.strokeStyle = plotColor
+    context.strokeStyle = present ? plotColorPresent : plotColor
     var minDepth = 100
     var maxDepth = 100
     var leftMax = 0
     var rightMax = 0
     context.moveTo(center, 0)
     for(var i = calcMin; i < calcMax; ++i) {
-      x = points[i].x
-      y = points[i].y
+      var x = points[i].x
+      var y = points[i].y
       if(y < minDepth)
         minDepth = y
       if(y > maxDepth)
@@ -64,10 +67,10 @@ const Model = (props) => {
     
 		//draw y axis
 		context.fillStyle = lineColor
-		context.strokeStyle = lineColor
+		context.strokeStyle = present ? lineColorPresent : lineColor
 		const stepSize = 4 / xAxisDivisions
 		const stepSizePixels = width / xAxisDivisions
-		for(var x = -2; x <= 2; x += stepSize) {
+		for(x = -2; x <= 2; x += stepSize) {
       if (x !== -2 && x !== 2) {
         context.beginPath()
         context.moveTo(center + x * stepSizePixels, 0)
@@ -75,28 +78,28 @@ const Model = (props) => {
         context.stroke()
       }
       
-      context.fillStyle = textColor
+      context.fillStyle = present ? textColorPresent : textColor
       if(x === 2)
         context.fillText(x + '"', center + x * stepSizePixels - fontSize * 1.5, fontSize)
       else
         context.fillText(x + '"', center + x * stepSizePixels + 5, fontSize)
-      context.fillStyle = lineColor
+      context.fillStyle = present ? lineColorPresent : lineColor
     }
 
     //draw x axis
-    context.fillStyle = lineColor
-    context.strokeStyle = lineColor
+    context.fillStyle = present ? lineColorPresent : lineColor
+    context.strokeStyle = present ? lineColorPresent : lineColor
     const depthStep = height / 120;
-    for(var y = 0; y <= 120; y += 20) {
+    for(y = 0; y <= 120; y += 20) {
       if (y !== 0 && y !== 120) {
         context.beginPath()
         context.moveTo(0, y * depthStep)
         context.lineTo(width, y * depthStep)
         context.stroke()  
       }
-      context.fillStyle = textColor
+      context.fillStyle = present ? textColorPresent : textColor
       context.fillText("-" + y + "'", 5, y * depthStep - 5)
-      context.fillStyle = lineColor
+      context.fillStyle = present ? textColorPresent : lineColor
     }
   }, [props])
 

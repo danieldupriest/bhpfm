@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Model from './components/Model'
 import Input from './components/Input'
+import Toggle from 'react-toggle'
+import 'react-toggle/style.css'
 
 function App() {
   const [rpm, setRpm] = useState(150)
@@ -10,9 +12,16 @@ function App() {
   const [rop, setRop] = useState(140)
   const [l1, setL1] = useState(15.25)
   const [l2, setL2] = useState(3.0)
+  const [present, setPresent] = useState(true)
+
+  const togglePresentation = () => {
+    setPresent(current => {
+      return !current
+    })
+  }
 
   return (
-    <div id="app">
+    <div id="app" className={present ? "present" : ""}>
       <header>
         <h1>Bottom Hole Pattern Feedback Model</h1>
       </header>
@@ -20,12 +29,18 @@ function App() {
         <div id="panel">
           <div id="settings" className="pane">
             <h2>Settings</h2>
-            <Input key={0} value={rpm} label="RPM" xmin={1} xmax={450} step={1} suffix=" rpm" func={({x}) => setRpm(x)}/>
-            <Input key={1} value={rock} label="Rock strength" xmin={1000} xmax={40000} step={1} suffix=" ksi" func={({x}) => setRock(x)}/>
-            <Input key={2} value={gauge} label="Gauge length" xmin={1} xmax={8} step={0.25} suffix=" in" func={({x}) => setGauge(x)}/>
-            <Input key={3} value={rop} label="ROP" xmin={1} xmax={400} step={1} suffix=" ft/hr" func={({x}) => setRop(x)}/>
-            <Input key={4} value={l1} label="L1" xmin={0} xmax={60} step={0.25} suffix=" ft" func={({x}) => setL1(x)}/>
-            <Input key={5} value={l2} label="L2" xmin={0} xmax={5} step={0.25} suffix=" ft" func={({x}) => setL2(x)}/>
+            <label className="toggle-label">
+              <div>Present</div>
+              <Toggle className="presentation-toggle" defaultChecked={present} onChange={togglePresentation} />
+            </label>
+            <div id="sliders">
+              <Input key={0} value={rpm} label="RPM" xmin={1} xmax={450} step={1} suffix=" rpm" func={({x}) => setRpm(x)}/>
+              <Input key={1} value={rock} label="Rock strength" xmin={1000} xmax={40000} step={1} suffix=" ksi" func={({x}) => setRock(x)}/>
+              <Input key={2} value={gauge} label="Gauge length" xmin={1} xmax={8} step={0.25} suffix=" in" func={({x}) => setGauge(x)}/>
+              <Input key={3} value={rop} label="ROP" xmin={1} xmax={400} step={1} suffix=" ft/hr" func={({x}) => setRop(x)}/>
+              <Input key={4} value={l1} label="L1" xmin={0} xmax={60} step={0.25} suffix=" ft" func={({x}) => setL1(x)}/>
+              <Input key={5} value={l2} label="L2" xmin={0} xmax={5} step={0.25} suffix=" ft" func={({x}) => setL2(x)}/>
+            </div>
           </div>
           <div id="instructions" className="pane">
             <h2>Instructions</h2>
@@ -37,7 +52,7 @@ function App() {
           </div>
         </div>
         <div id="model" className="pane">
-          <Model rpm={rpm} rock={rock} gauge={gauge} rop={rop} l1={l1} l2={l2} />
+          <Model rpm={rpm} rock={rock} gauge={gauge} rop={rop} l1={l1} l2={l2} present={present} />
         </div>
       </div>
       <footer>

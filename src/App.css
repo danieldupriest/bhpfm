@@ -5,6 +5,17 @@ header {
   margin-bottom: 1em;
 }
 
+.present header {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.present header h1 {
+  font-size: 0;
+}
+
 h1,
 h2 {
   color: var(--brighter);
@@ -37,23 +48,39 @@ h3 {
   max-width: 1450px;
 }
 
+.present #container {
+  background: var(--shadow-dark);
+  font-size: 200%;
+  max-width: 100%;
+}
+
 #panel {
   color: var(--bright);
   max-width: 50%;
 }
 
+.present #panel {
+  color: var(--brighter);
+}
+
 .pane {
   background: var(--darker);
-  /*background-image: url("./images/slate.png");*/
   margin: 1em;
   border: 3px solid var(--shadow-light);
   border-radius: 1em;
   overflow: auto;
   padding: 2em;
+  position: relative;
+}
+
+.present .pane {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  background: var(--shadow-dark);
 }
 
 .pane img {
-  opacity: 0.75;
   max-width: 40%;
   max-height: 20em;
 }
@@ -68,8 +95,35 @@ img.right {
   margin: 1em 0 1em 1em;
 }
 
+.present #settings {
+  min-height: 100vh;
+}
+
+#settings .toggle-label {
+  align-items: center;
+  display: flex;
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#settings .react-toggle {
+  margin-left: 1em;
+}
+
+#settings .react-toggle--checked .react-toggle-track {
+  background-color: var(--highlight);
+}
+
+#sliders {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 #instructions h3 {
-  clear: both;
   margin-top: 1em;
 }
 
@@ -80,6 +134,10 @@ img.right {
   padding: 0;
 }
 
+.present #model {
+  background: #000;
+}
+
 footer {
   background: var(--dark);
   box-shadow: 0 0 0.5em var(--shadow-dark);
@@ -88,6 +146,10 @@ footer {
   justify-content: space-between;
   gap: 2em;
   padding: 3em 2em;
+}
+
+.present footer {
+  display: none;
 }
 
 footer h3 {
@@ -131,6 +193,10 @@ footer .column {
     order: 0;
     margin-left: 1em;
     margin-bottom: 0;
+  }
+
+  .present #model {
+    margin-left: 0;
   }
 
   #canvas {

@@ -4,8 +4,16 @@
   min-height: 24em;
 }
 
+.present #canvas {
+  height: 100vh;
+}
+
 @media only screen and (max-width: 1000px) {
   #canvas {
+    height: auto;
+  }
+
+  .present #canvas {
     height: auto;
   }
 }
