@@ -1,6 +1,5 @@
 .slider-container {
-  background: var(--darker);
-  padding: 1em 0;
+  padding: 0;
 }
 
 .present .slider-container {
@@ -8,30 +7,8 @@
   padding: 0;
 }
 
-.slider-container:hover {
-  background: var(--dark);
-}
-
-.present .slider-container:hover {
-  background: var(--shadow-dark);
-}
-
-.slider-container:hover label {
-  color: var(--brighter);
-}
-
-.slider-container + .slider-container {
-  border-top: 1px solid var(--neutral);
-}
-
 .present .slider-container + .slider-container {
   border: 0;
-}
-
-@media only screen and (max-width: 1000px) {
-  .present .slider-container {
-    margin: 0.25em 0;
-  }
 }
 
 .slider-container .text {
@@ -63,7 +40,7 @@
 }
 
 .present .css-urjlyw-Slider {
-  height: 22px;
+  height: 2vmin;
 }
 
 .present .css-1ldz52l-Slider {

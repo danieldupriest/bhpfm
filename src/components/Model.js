@@ -104,7 +104,7 @@ const Model = (props) => {
   }, [props])
 
   return (
-    <canvas id="canvas" width="1024" height="1024" ref={canvasRef}/>
+    <canvas className="pane" id="model" width="1024" height="1024" ref={canvasRef}/>
   )
 }
 

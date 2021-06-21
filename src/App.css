@@ -2,7 +2,6 @@ header {
   background: var(--dark);
   padding: 1em 2em;
   box-shadow: 0 0 0.5em var(--shadow-dark);
-  margin-bottom: 1em;
 }
 
 .present header {
@@ -41,22 +40,23 @@ h3 {
 }
 
 #container {
-  display: flex;
-  flex: 1;
-  justify-content: center;
+  color: var(--bright);
   margin: 0 auto;
   max-width: 1450px;
+  padding: 1em;
+}
+
+.row {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
 .present #container {
   background: var(--shadow-dark);
-  font-size: 200%;
+  font-size: 4vmin;
   max-width: 100%;
-}
-
-#panel {
-  color: var(--bright);
-  max-width: 50%;
+  padding: 0;
 }
 
 .present #panel {
@@ -65,19 +65,18 @@ h3 {
 
 .pane {
   background: var(--darker);
-  margin: 1em;
   border: 3px solid var(--shadow-light);
   border-radius: 1em;
-  overflow: auto;
+  flex-basis: 21em;
+  flex-grow: 1;
   padding: 2em;
-  position: relative;
 }
 
 .present .pane {
+  background: var(--shadow-dark);
   border: 0;
   border-radius: 0;
   margin: 0;
-  background: var(--shadow-dark);
 }
 
 .pane img {
@@ -95,16 +94,12 @@ img.right {
   margin: 1em 0 1em 1em;
 }
 
-.row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+#settings {
 }
 
 .present #settings {
-  min-height: 24em;
-  padding-top: 0;
-  padding-bottom: 0;
+  /*min-height: 24em;*/
+  padding: 0 0 0 1em;
 }
 
 .present #settings h2 {
@@ -128,7 +123,9 @@ img.right {
 #sliders {
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-around;
+  padding-bottom: 1em;
 }
 
 .present #sliders {
@@ -140,110 +137,45 @@ img.right {
   margin-top: 1em;
 }
 
-#model {
-  align-self: start;
-  margin-left: 0;
-  overflow: hidden;
-  padding: 0;
-}
-
-.present #model {
-  background: #000;
-}
-
-footer {
-  background: var(--dark);
-  box-shadow: 0 0 0.5em var(--shadow-dark);
-  color: var(--bright);
-  display: flex;
-  justify-content: space-between;
-  gap: 2em;
-  padding: 3em 2em;
-}
-
-.present footer {
-  display: none;
-}
-
-footer h3 {
-  color: var(--brighter);
-  text-transform: uppercase;
-}
-
-footer a {
-  color: var(--brighter);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--highlight);
-}
-
-footer ul {
-  padding-left: 1.5em;
-}
-
-footer li {
-  margin-top: 1em;
-}
-
-footer .column {
-  flex-basis: 100%;
-}
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
   header {
     margin-bottom: 0;
   }
 
   #container {
-    flex-direction: column;
     padding: 0;
-    justify-content: start;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pane {
+    background-color: var(--darkest);
+    border: 0;
+    border-radius: 0;
+    padding: 1em;
   }
 
   .present #sliders {
-    height: auto;
+    height: 100%;
+  }
+
+  #settings {
+    margin-bottom: 1em;
   }
 
   .present #settings {
-    height: auto;
-    min-height: auto;
-    margin-top: 1em;
+    padding: 1em 1em 0 1em;
   }
 
   #model {
-    order: 0;
-    margin-left: 1em;
-    margin-bottom: 0;
-  }
-
-  .present #model {
-    margin-left: 0;
-  }
-
-  #canvas {
-    height: auto;
+    background-color: var(--shadow-dark);
   }
 
   #panel {
     order: 1;
     min-width: 100%;
-  }
-}
-
-@media only screen and (max-width: 770px) {
-  footer {
-    flex-direction: column;
-    gap: 0em;
-  }
-
-  footer .column {
-    padding-bottom: 1em;
-  }
-
-  footer .column + .column {
-    border-top: 1px solid var(--neutral);
-    padding: 2em 0 1em 0;
   }
 }

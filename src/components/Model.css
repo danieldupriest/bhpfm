@@ -1,19 +1,18 @@
-#canvas {
-  height: calc(100vh - 8em);
-  max-width: 100%;
-  min-height: 24em;
+#model {
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
 }
 
-.present #canvas {
+.present #model {
+  background: #000;
   height: 100vh;
 }
 
 @media only screen and (max-width: 1000px) {
-  #canvas {
-    height: auto;
+  #model {
   }
 
   .present #canvas {
-    height: auto;
   }
 }
