@@ -7,14 +7,11 @@
   --darkest: #121212;
   --shadow-dark: #0b0b0b;
   --shadow-light: #101010;
-  /*--highlight: #ff8000;*/
   --highlight: #6262ee;
 }
 
 * {
   box-sizing: border-box;
-  /*transition: background-color, color, padding, margin,
-    font-size ease-in-out 250ms;*/
 }
 
 html,
