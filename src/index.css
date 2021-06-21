@@ -13,8 +13,8 @@
 
 * {
   box-sizing: border-box;
-  transition: background-color, color, padding, margin,
-    font-size ease-in-out 250ms;
+  /*transition: background-color, color, padding, margin,
+    font-size ease-in-out 250ms;*/
 }
 
 html,
