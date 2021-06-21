@@ -5,7 +5,7 @@ const Footer = (props) => {
     <footer>
       <div className="column">
         <h3>Mathematical Model</h3>
-        <p>Based on model developed by Paul Pastusek.</p>
+        <p>Bottom hole pattern feedback model developed by Paul Pastusek.</p>
         <ul>
           <li><a href="https://onepetro.org/SPEATCE/proceedings-abstract/03ATCE/All-03ATCE/SPE-84448-MS/137797">SPE84448</a></li>
         </ul>

@@ -24,7 +24,7 @@ function App() {
   return (
     <div id="app" className={present ? "present" : ""}>
       <header>
-        <h1>Bottom Hole Pattern Feedback Model</h1>
+        <h1>Spiral Borehole Model</h1>
       </header>
       <div id="container">
         
