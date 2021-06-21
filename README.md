@@ -8,7 +8,7 @@ License: MIT
 
 Demo installation: [dev.hypersweet.com/bhpfm/](http://dev.hypersweet.com/bhpfm/)
 
-This application is a simulation of a spiral borehole model which is generated from various conditions. Parameters such as RPM, rock strength, gauge length, ROP, etc. can be specified, and the resulting borehole pattern is rendered.
+This application is a simulation of a spiral borehole model which is generated from various conditions. Parameters such as RPM, rock strength, gauge length, ROP, etc. can be specified, and the resulting borehole pattern is rendered. A high-contrast "Present" mode is available for display on screen or with a projector.
 
 ![Screenshot](screenshot.png)
 
