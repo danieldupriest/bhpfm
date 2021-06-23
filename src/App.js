@@ -49,11 +49,21 @@ function App() {
         <div className="row">
           <div id="instructions" className="pane">
             <h2>Instructions</h2>
-            <p><img className="right" src="./images/diagram.png" alt="Diagram of bent motor and parameters" />"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p><img className="right" src="./images/diagram.png" alt="Diagram of bent motor and parameters" />Click on the slider and move its position left or right to reduce or increase its value of each factor. Observe the sensitivity of the pattern’s tendency to gain or decay with each value. Because the user cannot typically control the rock strength, L1 or L2, the key design choices are usually gauge length, bit RPM and drill rate.</p>
+            <ul>
+              <li><strong>RPM</strong> - Bit speed in rounds per minute. Equals motor plus top drive speeds</li>
+              <li><strong>Rock strength</strong> - In situ rock compressive strength (psi)</li>
+              <li><strong>Gauge length</strong> - Distance from last trim cutter to upper shoulder of the bit (in.)</li>
+              <li><strong>ROP</strong> - Rate of penetration (ft/hr)</li>
+              <li><strong>L1</strong> - Distance from midpoint of the bearing stabilizer to the top motor stabilizer, or wall contact if no top stabilizer is present (ft)</li>
+              <li><strong>L2</strong> - Distance from bit to bearing stabilizer or wear pad (ft)</li>
+            </ul>
+            <p>The tendency of the spiral to gain in amplitude may be much greater with motor bends greater than the 1.5 degrees, or if there is additional side force on the bit due to whirl.</p>
           </div>  
           <div id="whirl" className="pane">
             <h2>Borehole Pattern</h2>
-            <p><img className="right" src="./images/whirl.png" alt="Rendering of whirl showing borehole pattern" />"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p><img className="right" src="./images/whirl.png" alt="Rendering of whirl showing borehole pattern" />This simulation demonstrates the effects six factors have on whether a bent housing motor will create a spiral pattern. Spiraling occurs due to feedback between the bit and the first contact point with the borehole wall above it, which is typically the bearing housing stabilizer or wear pad. We cannot prevent a bent motor from attempting to start a pattern. Instead, the design objective is to select a combination of these six items that ensure it always rapidly decay so it does no effect operations.</p>
+            <p>The physics of spiraling and the mathematics in this model are discussed in detail in <a href="https://onepetro.org/SPEATCE/proceedings-abstract/03ATCE/All-03ATCE/SPE-84448-MS/137797">SPE 84448</a>, Pastusek and Bracken.</p>
           </div>
         </div>
 
