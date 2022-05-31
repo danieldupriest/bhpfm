@@ -25,10 +25,3 @@ Ensure that node and npm are installed and up to date.
 1. Navigate to project root directory.
 2. Run `npm run build`.
 3. Copy the contents of `/build` into the directory from which you wish to serve the files.
-
-### Serving from a subdirectory
-
-If you will be serving the application from a subdirectory:
-
-1. Open `package.json` and add (or modify) the line `"homepage": "http://yourserver.com/subdirectory"` to reflect your installation.
-2. Build and deploy following the above steps.
