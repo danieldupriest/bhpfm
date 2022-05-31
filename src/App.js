@@ -62,7 +62,7 @@ function App() {
           </div>  
           <div id="whirl" className="pane">
             <h2>Borehole Pattern</h2>
-            <p><img className="right" src="./images/whirl.png" alt="Rendering of whirl showing borehole pattern" />This simulation demonstrates the effects six factors have on whether a bent housing motor will create a spiral pattern. Spiraling occurs due to feedback between the bit and the first contact point with the borehole wall above it, which is typically the bearing housing stabilizer or wear pad. We cannot prevent a bent motor from attempting to start a pattern. Instead, the design objective is to select a combination of these six items that ensure it always rapidly decay so it does no effect operations.</p>
+            <p><img className="right" src="./images/whirl.png" alt="Rendering of whirl showing borehole pattern" />This simulation demonstrates the effects six factors have on whether a bent housing motor will create a spiral pattern. Spiraling occurs due to feedback between the bit and the first contact point with the borehole wall above it, which is typically the bearing housing stabilizer or wear pad. We cannot prevent a bent motor from attempting to start a pattern. Instead, the design objective is to select a combination of these six items that ensure it always rapidly decays so it does not affect operations.</p>
             <p>The physics of spiraling and the mathematics in this model are discussed in detail in <a href="https://onepetro.org/SPEATCE/proceedings-abstract/03ATCE/All-03ATCE/SPE-84448-MS/137797">SPE 84448</a>, Pastusek and Bracken.</p>
           </div>
         </div>
